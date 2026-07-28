@@ -5,6 +5,8 @@ import { getPosts, getCategories } from "../data";
  * ملف Sitemap.xml الديناميكي (Dynamic Sitemap)
  * يضمن أرشفة كافة المقالات والتصنيفات والصفحات الثابتة فور نشرها تلقائياً.
  */
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://youssef-abdelrahman.com";
 

@@ -3,6 +3,8 @@ import { MetadataRoute } from "next";
 /**
  * ملف Robots.txt لإدارة سلوك زواحف الأرشفة (Search Crawlers)
  */
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = "https://youssef-abdelrahman.com";
 
