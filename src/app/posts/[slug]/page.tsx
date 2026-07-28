@@ -9,8 +9,15 @@ import TableOfContents from "../../../components/blog/TableOfContents";
 import ShareButtons from "../../../components/blog/ShareButtons";
 import AuthorBox from "../../../components/blog/AuthorBox";
 import RelatedPosts from "../../../components/blog/RelatedPosts";
-import { getPostBySlug, getRelatedPosts } from "../../../data";
+import { getPostBySlug, getRelatedPosts, getPosts } from "../../../data";
 import { formatDate } from "../../../utils";
+
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
