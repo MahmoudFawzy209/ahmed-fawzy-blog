@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بالكاتب | تواصل فكري ونقاش</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        أحمد فوزي
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الكاتب</a></li>
+          <li><a href="contact.html" class="active">تواصل معي</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="تغيير المظهر"></button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <header class="page-header">
+      <h1 class="page-title">تواصل معي</h1>
+      <p class="page-subtitle">نرحب بتلقي مقترحات القراء الأكارم ومقترحاتكم حول قضايا المجتمع ومشكلاته</p>
+    </header>
+
+    <section class="contact-layout">
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <h2 class="contact-title" style="margin-bottom: 1.5rem; font-size: 1.5rem;">أرسل رسالة هادئة</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">الاسم الكريم</label>
+            <input type="text" id="name" placeholder="مثال: د. أحمد خالد" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" placeholder="example@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">موضوع الحوار</label>
+            <input type="text" id="subject" placeholder="مثال: مناقشة فكرة مقال 'العزلة الرقمية'" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">رسالتك أو تساؤلك الفكري</label>
+            <textarea id="message" placeholder="اكتب هنا تساؤلاتك، أفكارك، أو مقترحاتك للتعاون الفكري المتبادل..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">إرسال الرسالة</button>
+        </form>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="contact-info">
+        <div>
+          <h2 class="contact-title">قنوات التواصل والمنصات</h2>
+          <p class="contact-desc" style="margin-top: 0.5rem;">
+            إذا كنت تفضل المراسلة المباشرة أو ترغب في متابعة ما أنشره دورياً عبر البريد الشخصي، يمكنك استخدام القنوات التالية:
+          </p>
+        </div>
+
+        <div class="contact-details">
+          <!-- Email Card -->
+          <div class="detail-card">
+            <div class="detail-icon">
+              <!-- Mail Icon -->
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <span class="detail-label">البريد الإلكتروني المباشر</span>
+              <a href="mailto:contact@ahmad-fawzy.com" class="detail-val">contact@ahmad-fawzy.com</a>
+            </div>
+          </div>
+
+          <!-- Facebook Card -->
+          <div class="detail-card">
+            <div class="detail-icon">
+              <!-- Facebook Icon -->
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M20 10a10 10 0 10-11.562 9.878v-6.987H5.898V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.878 20 15.357 20 10z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="detail-content">
+              <span class="detail-label">الصفحة الشخصية على Facebook</span>
+              <a href="https://www.facebook.com/share/1D9FcFGy1L/" target="_blank" class="detail-val">https://www.facebook.com/share/1D9FcFGy1L/</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">أحمد فوزي<span class="logo-dot" style="display:inline-block; margin-right: 4px;"></span></div>
+        <p class="footer-brand-bio">باحث وكاتب حر، مهتم بثقافة المجتمعات المعاصرة وأثر التكنولوجيا والفساد الأخلاقي والاجتماعي على اسقرار الفرد والأسرة والمجتمع؛ بهدف تقديم قراءة نقدية واعية واقتراح حلول عملية لمشكلات وقضايا المجتمع...</p>
+      </div>
+
+      <div>
+        <h4 class="footer-column-title">تصفّح</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الكاتب</a></li>
+          <li><a href="contact.html">تواصل معي</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-column-title">متابعة وقراءة</h4>
+        <ul class="footer-links">
+          <li><a href="https://twitter.com/ahmad_fawzy" target="_blank">منصة X (تويتر)</a></li>
+          <li><a href="https://www.facebook.com/share/1D9FcFGy1L/" target="_blank">صفحة Facebook</a></li>
+          <li><a href="https://linkedin.com/in/ahmad-fawzy" target="_blank">شبكة LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container bottom-bar">
+      <p>© 2026 أحمد فوزي. جميع الحقوق محفوظة.</p>
+      <p>صُمّم بكل حب لخدمة الفكر والوعي المجتمعي.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

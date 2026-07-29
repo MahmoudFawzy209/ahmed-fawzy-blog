@@ -1,0 +1,134 @@
+npm install @sanity/client next-sanity
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحمد فوزي | كاتب وباحث في قضايا المجتمع</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        أحمد فوزي
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">الرئيسية</a></li>
+          <li><a href="about.html">عن الكاتب</a></li>
+          <li><a href="contact.html">تواصل معي</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" id="theme-toggle" aria-label="تغيير المظهر"></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">مساحة فكرية هادئة</span>
+        <h1 class="hero-title">قراءة تحليلية لقضايا المجتمع ومشكلاته </h1>
+        <p class="hero-bio">
+          أهلاً بك. أنا أحمد فوزي، باحث في قضايا المجتمع.
+          أكتب هنا كمحاولة لتفكيك أبرز مشكلات المجتمع وفهم الصراع المجتمعي سواء على مستوى الفرد والأسرة
+        </p>
+        <div class="hero-actions">
+          <a href="about.html" class="btn-primary">اقرأ قصتي الفكرية</a>
+          <a href="#articles" class="btn-secondary">تصفح المقالات</a>
+        </div>
+      </div>
+
+      <!-- Modernized Hero Image (Matches exactly our updated premium Next.js style) -->
+      <div class="hero-image-container">
+        <div class="hero-image-wrapper">
+          <img src="/AhmedFawzy.jpeg" alt="أحمد فوزي" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Filters Section -->
+    <section class="filter-section" id="articles">
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="الكل">الكل</button>
+        <button class="filter-btn" data-category="تحولات مجتمعية">تحولات مجتمعية</button>
+        <button class="filter-btn" data-category="رؤى فكرية">رؤى فكرية</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="search-input" class="search-input" placeholder="ابحث عن مقال أو فكرة...">
+        <!-- Search Icon -->
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Articles Grid (Will be populated dynamically by script.js) -->
+    <section class="posts-grid" id="posts-grid"></section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <h3 class="newsletter-title">انضم لقائمة القُــرَّاء المفكرين</h3>
+      <p class="newsletter-desc">
+        يمكنك استلام كافة الأفكار والمقترحات حول قضايا المجتمع والأسرة أول بأول عبر بريدك الإلكتروني، إذا لم يكن لديك
+        الوقت الكافي لمتابعة آخر تحديثات النشر داخل الموقع.
+      </p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="اكتب الإيميل الخاص بك هنا ..."
+          required>
+        <button type="submit" class="btn-primary">اشترك الآن</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">أحمد فوزي<span class="logo-dot"
+            style="display:inline-block; margin-right: 4px;"></span></div>
+        <p class="footer-brand-bio">باحث وكاتب حر، مهتم بثقافة المجتمعات المعاصرة وأثر التكنولوجيا والفساد الأخلاقي
+          والاجتماعي على اسقرار الفرد والأسرة والمجتمع؛ بهدف تقديم قراءة نقدية واعية واقتراح حلول عملية لمشكلات وقضايا
+          المجتمع...</p>
+      </div>
+
+      <div>
+        <h4 class="footer-column-title">تصفّح</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">عن الكاتب</a></li>
+          <li><a href="contact.html">تواصل معي</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-column-title">متابعة وقراءة</h4>
+        <ul class="footer-links">
+          <li><a href="https://twitter.com/ahmad_fawzy" target="_blank">منصة X (تويتر)</a></li>
+          <li><a href="https://www.facebook.com/share/1D9FcFGy1L/" target="_blank">صفحة Facebook</a></li>
+          <li><a href="https://linkedin.com/in/ahmad-fawzy" target="_blank">شبكة LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container bottom-bar">
+      <p>© 2026 أحمد فوزي. جميع الحقوق محفوظة.</p>
+      <p>صُمّم بكل حب لخدمة الفكر والوعي المجتمعي.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

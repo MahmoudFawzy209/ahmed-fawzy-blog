@@ -1,0 +1,558 @@
+/* --- General Page Headers --- */
+.pageHeader {
+  padding: 5rem 0 3rem 0;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* --- Home Page (Hero) --- */
+.hero {
+  padding: 6rem 0 4rem 0;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 4rem;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.heroBadge {
+  background-color: var(--accent-light);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.heroBio {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btnPrimary {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnPrimary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btnSecondary {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.btnSecondary:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-2px);
+}
+
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.95;
+  border-radius: 30px 80px 30px 80px;
+  overflow: visible;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Offset stylish background frame */
+.heroImageContainer::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 2px dashed var(--accent);
+  border-radius: 35px 85px 35px 85px;
+  z-index: 1;
+  transition: var(--transition-smooth);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Subtle glowing backdrop */
+.heroImageContainer::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  opacity: 0.2;
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 80px 30px 80px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  transition: var(--transition-smooth);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+/* Premium Hover Interactions */
+.heroImageContainer:hover {
+  transform: translateY(-8px) rotate(-1.5deg);
+}
+
+.heroImageContainer:hover::before {
+  inset: 6px;
+  opacity: 0.8;
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.heroImageContainer:hover::after {
+  opacity: 0.4;
+  filter: blur(50px);
+}
+
+.heroImageContainer:hover .heroImage {
+  transform: scale(1.08);
+}
+
+/* --- Search & Filters (Home) --- */
+.filterSection {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.filterControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.categoryFilters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 1.25rem;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filterBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filterBtnActive {
+  background-color: var(--accent);
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.searchBox {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 2.25rem 0.5rem 1rem;
+  border-radius: 99px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.searchInput:focus {
+  border-color: var(--accent);
+  background-color: var(--bg-primary);
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* --- Articles Grid (Home) --- */
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.noResults {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-secondary);
+  grid-column: 1 / -1;
+}
+
+/* --- About Page --- */
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 5rem;
+}
+
+.aboutBody {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.aboutBody p {
+  margin-bottom: 1.5rem;
+}
+
+.valuesSection {
+  margin: 5rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.valueTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.valueIndicator {
+  width: 4px;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.valueDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.timelineSection {
+  margin: 5rem 0;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--border-color);
+  top: 0;
+  bottom: 0;
+  right: 1.5rem; /* RTL Timeline path aligned on right side */
+}
+
+.timelineItem {
+  padding: 1.5rem 3.5rem 1.5rem 0;
+  position: relative;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.timelineDot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 4px solid var(--bg-primary);
+  top: 1.85rem;
+  right: 1rem;
+  z-index: 2;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.timelineCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: var(--transition-fast);
+}
+
+.timelineCard:hover {
+  border-color: var(--accent-light);
+}
+
+.timelineYear {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.timelineText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* --- Contact Page --- */
+.contactLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 5rem;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contactDesc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: var(--transition-fast);
+}
+
+.detailCard:hover {
+  border-color: var(--accent-light);
+}
+
+.detailIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detailLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.detailVal {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .heroContent {
+    align-items: center;
+  }
+  
+  .heroImageContainer {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .aboutLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contactLayout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+  
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .timeline::after {
+    right: 1rem;
+  }
+  
+  .timelineItem {
+    padding-right: 2.5rem;
+  }
+  
+  .timelineDot {
+    right: 0.5rem;
+  }
+  
+  .filterControls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .searchBox {
+    max-width: 100%;
+  }
+}
